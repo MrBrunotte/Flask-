@@ -22,7 +22,8 @@ def about():
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        flash("Thanks {}, we have received your message!".format(request.form["name"]))
+        flash("Thanks {}, we have received your message!".format(
+            request.form["name"]))
     return render_template("contact.html", page_title="Contact")
 
 
@@ -47,3 +48,7 @@ def careers():
 if __name__ == '__main__':
     # NEVER HAVE DEBUG=TRUE IN PRODUCTION OR WHEN SUBMITTING!!!
     app.run(debug=True)
+
+app.run(host=os.environ.get('IP'),
+        port=int(os.environ.get('PORT')),
+        debug=False)
