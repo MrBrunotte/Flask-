@@ -45,9 +45,9 @@ def careers():
     return render_template("careers.html", page_title="Careers")
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # NEVER HAVE DEBUG=TRUE IN PRODUCTION OR WHEN SUBMITTING!!!
-    app.run(debug=True)
+# app.run(debug=True)
 
 app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
